@@ -1,5 +1,15 @@
 const Notice = require('../models/notice');
 
+const getNotices = async (req, res, next) => {
+  let notices;
+  try {
+    notices = await notices.find();
+  } catch (err) {
+    console.log(err);
+  }
+  res.json({notices: notices.map(notice => notice.toObject({ getters: true }))});
+}
+
 const addNotice = async (req, res, next) => {
   const { body, creationDate, id } = req.body;
   const createdNotice = new Notice({
@@ -16,4 +26,5 @@ const addNotice = async (req, res, next) => {
   res.json(createdNotice);
 }
 
+exports.getNotices = getNotices;
 exports.addNotice = addNotice;
