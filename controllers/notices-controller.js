@@ -28,7 +28,7 @@ const addNotice = async (req, res, next) => {
 }
 
 const deleteNoticeById = async (req, res, next) => {
-  const noticeId = req.params.id;
+  const id = req.params.id;
   let notice;
   try {
     notice = await Notice.findById(id);
