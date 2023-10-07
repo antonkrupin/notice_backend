@@ -47,3 +47,4 @@ const deleteNoticeById = async (req, res, next) => {
 
 exports.getNotices = getNotices;
 exports.addNotice = addNotice;
+exports.deleteNoticeById = deleteNoticeById;
