@@ -28,10 +28,10 @@ const addNotice = async (req, res, next) => {
 }
 
 const deleteNoticeById = async (req, res, next) => {
-  const noticeId = req.params.noticeId;
+  const noticeId = req.params.id;
   let notice;
   try {
-    notice = await Notice.findById(noticeId);
+    notice = await Notice.findById(id);
   } catch (err) {
     console.log(err);
   }

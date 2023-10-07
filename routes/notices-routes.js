@@ -8,6 +8,6 @@ router.get('/', noticeControllers.getNotices);
 
 router.post('/addNotice', noticeControllers.addNotice);
 
-router.delete('/notice/:noticeId', noticeControllers.deleteNoticeById);
+router.delete('/notice/:id', noticeControllers.deleteNoticeById);
 
 module.exports = router;
