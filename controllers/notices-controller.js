@@ -3,11 +3,12 @@ const Notice = require('../models/notice');
 const getNotices = async (req, res, next) => {
   let notices;
   try {
-    notices = await notices.find();
+    notices = await Notice.find();
   } catch (err) {
     console.log(err);
   }
-  res.json({notices: notices.map(notice => notice.toObject({ getters: true }))});
+
+  res.json(notices);
 }
 
 const addNotice = async (req, res, next) => {
